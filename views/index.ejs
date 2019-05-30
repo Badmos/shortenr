@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shortenr | Generate Short and neat Links</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,600,700&amp;lang=en" /> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" defer="defer"></script>
+    <script src="/NodeJs/Shortenr/public/js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h2><a href="/"> Shortenr</a></h2>
+    </header>
+
+    <section class="main">
+        <div class="background-image"></div>
+        <div class="main-content">
+            <h1>Got a long link?</h1>
+            <h3>Then you'll want to shorten it. It takes less than 5 seconds to get started </h3>
+            <% if(url) { %>
+                <a href="#url" class="btn">Grab link</a>
+                <% } else { %>
+                    <a href="#url" class="btn">Get Started</a>
+                    <% } %>
+        </div>
+
+    </section>
+    <section class="contact" id="url">
+        <h3 class="title">Paste just about any valid URL</h3>
+        <p>Grab a link from anywhere, copy it, and you'll be a click away from generating a neat, short link.</p>
+        <hr class="hr">
+        <form action="/" method="POST">
+            <input type="text" name="unprocessedUrl" placeholder="Shortern link" required/>
+            <button class="btn">Shorten url</button>
+        </form>
+        <% if (error) { %>
+            <div class="error-response" role="alert">
+                <%= error %>
+            </div>
+            <% } else if (url) { %>
+                <div class="response-url">
+                    <%= url %>
+                </div>
+                <% } %>
+    </section>
+
+    <section class="packages">
+        <h3 class="title">Why shortenr?</h3>
+        <p class="description">Here's why you need shorter and neater URLs</p>
+        <hr>
+
+        <ul class="grid">
+            <li>
+                <i class="fas fa-tasks fa-4x"></i>
+                <h4>Manageable</h4>
+                <p>So you've got just another long, messy web link? not good enough. You know, SEO reasons. Shortenr helps make your links more manageable and its auto-generated URLs are super user friendly</p>
+            </li>
+
+            <li>
+                <i class="fas fa-share-alt-square fa-4x"></i>
+                <h4>Promote sharing</h4>
+                <p>With shortenr, You can simply fit more links and content in less space. A tweet can describe and then link to a webpage in under 280 characters, while a full URL might not even come with an explanation. Shortenr makes it far easier to
+                    text and share URLs across platforms</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/badmos">Yusuf Badmos</a></p>
+        <p>All rights reserved. &copy; 2019</p>
+        <ul class="social">
+            <li><a href="https://github.com/badmos"><i class="fab fa-github fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/@BadmosYT"><i class="fab fa-twitter fa-2x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/yusuf-badmos-628262136"><i class="fab fa-linkedin fa-2x"></i></a></li>
+            <li><a href="https://medium.com/@BadmosYT"><i class="fab fa-medium fa-2x"></i></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
